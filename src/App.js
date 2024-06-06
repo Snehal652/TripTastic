@@ -18,8 +18,8 @@ const App = () => {
     const [weatherData, setWeatherData] = useState([]);
     const [filteredPlaces, setFilteredPlaces] = useState([])
 
-    const [coordinates, setCoordinates] = useState({});
-    const [bounds, setBounds] = useState({});
+    const [coords, setCoords] = useState({});
+    const [bounds, setBounds] = useState({}); //This is used for top right and the bottom corner of the map
 
     const [autocomplete, setAutocomplete] = useState(null);
     const [childClicked, setChildClicked] = useState(null);
@@ -32,7 +32,7 @@ const App = () => {
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
-            setCoordinates({ lat: latitude, lng: longitude });
+            setCoords({ lat: latitude, lng: longitude });
         });
     }, []);
 
@@ -46,7 +46,7 @@ const App = () => {
         if (bounds.sw && bounds.ne) {
             setIsLoading(true);
 
-            getWeatherData(coordinates.lat, coordinates.lng)
+            getWeatherData(coords.lat, coords.lng)
                 .then((data) => setWeatherData(data))
 
             getPlacesData(type, bounds.sw, bounds.ne)
@@ -65,7 +65,7 @@ const App = () => {
         const lat = autocomplete.getPlace().geometry.location.lat();
         const lng = autocomplete.getPlace().geometry.location.lng();
 
-        setCoordinates({ lat, lng });
+        setCoords({ lat, lng });
     };
 
     return (
@@ -87,9 +87,9 @@ const App = () => {
                 </Grid>
                 <Grid item xs={12} md={8} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <Map
-                        setCoordinates={setCoordinates}
+                        setCoords={setCoords}
                         setBounds={setBounds}
-                        coordinates={coordinates}
+                        coords={coords}
                         places={filteredPlaces.length ? filteredPlaces : places}
                         setChildClicked={setChildClicked}
                         weatherData={weatherData}

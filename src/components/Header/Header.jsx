@@ -4,10 +4,10 @@ import { Autocomplete } from '@react-google-maps/api';
 import { AppBar, Toolbar, Typography, InputBase, Box } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 
-import useStyles from './styles'; //Just from the name we can say that yseStyles is a hook so let's call it how we usually call a hook that is const classes = useStyles();
+import useStyles from './styles.js'; //Just from the name we can say that yseStyles is a hook so let's call it how we usually call a hook that is const classes = useStyles();
 // import { useState } from 'react';
 
-const Header = ({ onPlaceChanged, onload }) => {
+const Header = ({ onPlaceChanged, onLoad }) => {
     const classes = useStyles();
     // const [autocomplete, setAutocomplete] = useState(null);
 
@@ -32,7 +32,7 @@ const Header = ({ onPlaceChanged, onload }) => {
                         Explore New Places
                     </Typography>
 
-                    <Autocomplete onload={onload} onPlaceChanged={onPlaceChanged}>
+                    <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
                         <div className={classes.search}>
                             <div className={classes.searchIcon}>
                                 <SearchIcon />
