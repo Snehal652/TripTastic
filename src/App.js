@@ -1,4 +1,4 @@
-// Most Important COomponent of entire Application
+// Most Important Component of entire Application
 
 import React from 'react';
 import { useState, useEffect } from 'react';
