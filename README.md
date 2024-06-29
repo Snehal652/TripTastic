@@ -2,6 +2,8 @@
 
 TripTastic is an advanced travel companion application that fetches restaurants, hotels, and attractions based on the user's location from specialized APIs.
 
+![TripTastic Homepage](TripTastic%20-%20Google%20Chrome%2029-06-2024%2012_59_37.png)
+
 ## Features:
 
 1. **Tools & Technologies Used:**
@@ -38,7 +40,13 @@ To run TripTastic locally:
    ```
 
 2. Install dependencies.
+
+   ```bash
    npm install
 
+   ```
+
 3. Start Development server.
+   ```bash
    npm start
+   ```
