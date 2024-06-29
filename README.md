@@ -24,7 +24,11 @@ TripTastic is an advanced travel companion application that fetches restaurants,
 
    - The information updates dynamically as the user browses the map.
 
-5. **Interactive Map Integration:**
+5. **Weather Data Integration:**
+
+   - Utilizes RapidAPI to fetch and display weather data for locations on the map.
+
+6. **Interactive Map Integration:**
    - Clicking on any specific card on the map redirects the user to its corresponding website.
 
 ## Installation
